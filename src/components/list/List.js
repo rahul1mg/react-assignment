@@ -35,7 +35,7 @@ class JobList extends React.Component {
                     <h6>
                         <Button variant="link" onClick={() => { this.showJob(d.id)}}>{d.company}</Button>
                     </h6>
-                    <p>{d.title}</p>
+                    <p className={"position"}>{d.title}</p>
                 </div>
                 <div className="col-6">
                     <span>{d.location}</span><br/>
@@ -53,6 +53,7 @@ class JobList extends React.Component {
                 </h1>
 
                 <ReactTable
+                    TheadComponent={_ => null}
                     noDataText="No Jobs"
                     showPagination={false}
                     data={jobs}

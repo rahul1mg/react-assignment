@@ -22,7 +22,9 @@ class Job extends React.Component {
                 <h1>{job.title}</h1>
                 <hr/>
                 <div dangerouslySetInnerHTML={{__html: job.description}}></div>
-                <Button onClick={() => { this.apply(job.id)}}>Apply </Button>
+                <Button onClick={() => {
+                    this.apply(job.id)
+                }}>Apply </Button>
             </div>
         )
     }
