@@ -2,7 +2,7 @@ import axios from "axios";
 
 import {ListAction} from "../actions/ListAction"
 
-const url = "http://localhost:4000"
+const url = "https://guarded-sierra-28456.herokuapp.com/"
 
 function getJobs(keyword = "ruby") {
     return (dispatch) => {
