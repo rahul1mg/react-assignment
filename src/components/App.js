@@ -1,8 +1,5 @@
 import React from 'react';
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
-
-
-
 import './App.css';
 import JobSearch from "./search/Search";
 import JobList from "./list/List";

@@ -17,7 +17,7 @@ class Job extends React.Component {
         const {jobs} = this.props.ListReducer
         const job = getJobById(jobs, params.jobId)
         return (
-            <div>
+            <div className="container">
                 <p>{job.type + "/" + job.location} </p><br/>
                 <h1>{job.title}</h1>
                 <hr/>

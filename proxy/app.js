@@ -1,13 +1,29 @@
-const http = require("http")
-var httpProxy = require('http-proxy');
+const express = require("express")
+var app = express()
+var request = require("request");
+const cors = require("cors")
 
-var proxy = httpProxy.createProxyServer({rejectUnauthorized: false}); // See (†)
+app.use(cors())
+app.get("*", (req, res) => {
+    const {desc, page} = req.query
 
+    var options = {
+        method: 'GET',
+        url: 'https://jobs.github.com/positions.json',
+        qs: {description: desc, page: page},
+        headers:
+            {
+                Host: 'jobs.github.com',
+                Accept: '*/*',
+                'User-Agent': 'PostmanRuntime/7.19.0'
+            }
+    };
 
-const server = http.createServer(function (req, res) {
-    proxy.web(req, res, {target: 'https://jobs.github.com'});
-});
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
 
+        res.send(body);
+    });
+})
 
-server.listen(3000)
-
+app.listen(4000)

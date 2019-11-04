@@ -26,7 +26,7 @@ class Apply extends React.Component {
         const {jobs} = this.props.ListReducer
         const job = getJobById(jobs, params.jobId)
         return (
-            <div>
+            <div className="container">
                 <h1> Applying for {job.title}</h1>
                 <Form>
                     <Form.Group>

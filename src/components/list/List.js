@@ -2,6 +2,7 @@ import React from "react";
 import './List.css'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
+import moment from "moment"
 
 import {Button} from "react-bootstrap";
 
@@ -38,20 +39,21 @@ class JobList extends React.Component {
                 </div>
                 <div className="col-6">
                     <span>{d.location}</span><br/>
-                    <span>{d.created_at}</span>
+                    <span>{moment(d.created_at).fromNow()}</span>
                 </div>
 
             </div>,
 
         }]
         return (
-            <div className="inner">
+            <div className="container">
 
                 <h1>
                     Jobs
                 </h1>
 
                 <ReactTable
+                    noDataText="No Jobs"
                     showPagination={false}
                     data={jobs}
                     columns={columns}

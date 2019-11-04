@@ -31,7 +31,7 @@ class JobSearch extends React.Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="container">
                 <h1>Welcome to Job Search</h1>
                 <Form.Group>
                     <Form.Control onChange={this.handleJobSearch} type="text" size="sm"
